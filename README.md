@@ -1,2 +1,7 @@
 # NeoNeovim
-"This will the the last rewrite"
+
+## Setup
+
+## Links
+
+- [Plugins](docs/Plugins.md)
