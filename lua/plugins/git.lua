@@ -36,14 +36,13 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
-      -- "ibhagwan/fzf-lua",
+      "ibhagwan/fzf-lua",
     },
     lazy = true,
     opts = {
       integrations = {
         diffview = true,
-	-- TODO: enable
-        -- fzf_lua = nil,
+        fzf_lua = nil,
         mini_pick = nil,
       },
     },

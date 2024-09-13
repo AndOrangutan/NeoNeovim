@@ -12,7 +12,7 @@
     deps = with pkgs; [
       pkgs.fzf
       pkgs.fd
-      pkgs.rg
+      pkgs.ripgrep
     ];
 
     lsp_servers = with pkgs; [
