@@ -6,7 +6,6 @@
   };
 
   outputs = { self, nixpkgs }: let
-    # Import nixpkgs for the Linux system
     pkgs = import nixpkgs { system = "x86_64-linux"; };
 
     deps = with pkgs; [
@@ -31,9 +30,12 @@
     ];
 
     in {
-      devShells.x86_64-linux.default = pkgs.mkShell {
-        buildInputs = deps ++ lsp_servers ++ formatters ++ linters ++ plugins;
+      packages.x86_64-linux.default = pkgs.buildEnv {
+        name = "neovim-with-deps";
+        paths = [
+          pkgs.neovim
+        ] ++ deps ++ lsp_servers ++ formatters ++ linters ++ plugins;
       };
-      packages.x86_64-linux.default = pkgs.neovim;
+
     };
 }
