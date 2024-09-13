@@ -9,6 +9,12 @@
     # Import nixpkgs for the Linux system
     pkgs = import nixpkgs { system = "x86_64-linux"; };
 
+    deps = with pkgs; [
+      pkgs.fzf
+      pkgs.fd
+      pkgs.rg
+    ];
+
     lsp_servers = with pkgs; [
       # pkgs.lua-language-server
     ];
@@ -26,7 +32,7 @@
 
     in {
       devShells.x86_64-linux.default = pkgs.mkShell {
-        buildInputs = lsp_servers ++ formatters ++ linters ++ plugins;
+        buildInputs = deps ++ lsp_servers ++ formatters ++ linters ++ plugins;
       };
       packages.x86_64-linux.default = pkgs.neovim;
     };
