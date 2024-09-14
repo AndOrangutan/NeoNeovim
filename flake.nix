@@ -15,7 +15,7 @@
     ];
 
     lsp_servers = with pkgs; [
-      # pkgs.lua-language-server
+      pkgs.lua-language-server
     ];
 
     formatters = with pkgs; [
