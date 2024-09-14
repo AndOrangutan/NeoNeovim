@@ -22,3 +22,15 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         end
     end,
 })
+
+-- Automattically create missing subdirectories
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+    pattern = "*",
+    callback = function(event)
+        local dir = vim.fn.fnamemodify(event.file, ":p:h")
+        if vim.fn.isdirectory(dir) == 0 then
+            vim.fn.mkdir(dir, "p")
+        end
+    end
+})
+

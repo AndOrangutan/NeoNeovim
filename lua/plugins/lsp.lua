@@ -3,8 +3,6 @@ return {
         "neovim/nvim-lspconfig",
         event = {"BufReadPost", "BufNewFile", "BufWritePre"},
         opts = function()
-            local icons = require("config.icons")
-
         end,
 		config = function(_, opts)
 			local icons = require("config.icons")
@@ -35,7 +33,7 @@ return {
 
             vim.diagnostic.config({
                 -- prefix = '■', -- Could be '●', '▎', 'x'
-                -- virtual_text = true,
+                virtual_text = false,
                 float = {
                     source = "always",
                 },
@@ -45,25 +43,23 @@ return {
                 severity_sort = false,
             })
 
-            local servers = { "lua_ls" }
+            for lspconfig_name, lsp_name in pairs(defaults.lspconfig_to_lsp_name) do
+                local has_lsp_config, lsp_config = pcall(require, "config.lsp."..lspconfig_name)
 
-
-            for _, lsp in ipairs(servers) do
-                local has_lsp_config, lsp_config = pcall("config.lsp."..lsp)
-                local config = {
-                    -- on_attach = my_custom_on_attach,
-                    capabilities = lsp.gen_capabilities,
-                }
                 if has_lsp_config then
-                    config = lsp_config
+                    lsp_config()
+                else
+                    lspconfig[lsp_name].setup({
+                        -- on_attach = my_custom_on_attach,
+                        capabilities = lsp.gen_capabilities,
+                    })
                 end
-                lspconfig[lsp].setup(config)
             end
 		end,
         keys = {
             {"<leader>e", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "LSP [e]pand Diagnostics"},
-            {"[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "LSP Goto Prev [d]iagnostic"},
-            {"[d", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "LSP Goto prev [d]iagnostic"},
+            {"[d", "<cmd>lua vim.diagnostic.goto_prev({float = true})<cr>", desc = "LSP Goto Prev [d]iagnostic"},
+            {"[d", "<cmd>lua vim.diagnostic.goto_next({float = true})<cr>", desc = "LSP Goto prev [d]iagnostic"},
             -- TODO: Research loclist
             -- {"<leader>q", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = ""},
         },
