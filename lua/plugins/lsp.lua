@@ -49,9 +49,10 @@ return {
                 if has_lsp_config then
                     lsp_config()
                 else
+                    vim.notify(lsp_name)
                     lspconfig[lsp_name].setup({
                         -- on_attach = my_custom_on_attach,
-                        capabilities = lsp.gen_capabilities,
+                        capabilities = lsp.gen_capabilities(),
                     })
                 end
             end
