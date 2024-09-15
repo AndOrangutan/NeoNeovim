@@ -18,7 +18,6 @@ return {
             },
         },
     },
-    { "Bilal2453/luvit-meta", lazy = true },
     -- TODO: Move to completion
     -- {
     --     "hrsh7th/nvim-cmp",

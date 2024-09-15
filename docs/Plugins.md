@@ -10,6 +10,12 @@ While I could use nix packages to configure neovim, I want to try to make this c
 
 - [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - Lua `fork` of vim-web-devicons for neovim.
 
+### Filetype
+
+#### Lua
+
+- [folke/lazydev.nvim](https://github.com/folke/lazydev.nvim) - Faster LuaLS setup for Neovim.
+
 ### Git
 
 - [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim) - Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
@@ -19,6 +25,10 @@ While I could use nix packages to configure neovim, I want to try to make this c
 ### LSP
 
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configs for Nvim LSP.
+
+### Navigation
+
+- [numToStr/Navigator.nvim](https://github.com/numToStr/Navigator.nvim) - Smoothly navigate between neovim and terminal multiplexer(s).
 
 ### Picker
 
