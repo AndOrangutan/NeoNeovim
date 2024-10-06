@@ -28,7 +28,7 @@ While I could use nix packages to configure neovim, I want to try to make this c
 
 ### Navigation
 
-- [numToStr/Navigator.nvim](https://github.com/numToStr/Navigator.nvim) - Smoothly navigate between neovim and terminal multiplexer(s).
+- [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) - Smart, seamless, directional navigation and resizing of Neovim + terminal multiplexer splits. Supports tmux, Wezterm, and Kitty. Think about splits in terms of "up/down/left/right".
 
 ### Picker
 
