@@ -4,7 +4,19 @@ While I could use nix packages to configure neovim, I want to try to make this c
 
 - [Lazy](https://github.com/folke/lazy.nvim) - A modern plugin manager for Neovim.
 
-### Installed
+## Installed
+
+### Completion
+
+- [iguanacucumber/magazine.nvim](https://github.com/iguanacucumber/magazine.nvim) - nvim-cmp fork.
+    - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) - nvim-cmp source for buffer words.
+    - [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline) -  nvim-cmp source for vim's cmdline.
+    - [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - nvim-cmp source for neovim builtin LSP client.
+    - [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path) - nvim-cmp source for path.
+    - [petertriho/cmp-git](https://github.com/petertriho/cmp-git) - Git source for nvim-cmp.
+
+- [garymjr/nvim-snippets](https://github.com/garymjr/nvim-snippets) - Snippet support using native neovim snippets.
+    - ["rafamadriz/friendly-snippets"](https://github.com/rafamadriz/friendly-snippets) - Set of preconfigured snippets for different languages.
 
 ### Dependencies
 

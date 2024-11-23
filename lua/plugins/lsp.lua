@@ -20,6 +20,7 @@ return {
                 return orig_util_open_floating_preview(contents, syntax, opts, ...)
             end
 
+
             -- Set up kind icons
             local kinds = vim.lsp.protocol.CompletionItemKind
             for i, kind in ipairs(kinds) do
@@ -39,8 +40,8 @@ return {
                 },
                 signs = true,
                 underline = true,
-                update_in_insert = false,
-                severity_sort = false,
+                update_in_insert = true,
+                severity_sort = true,
             })
 
             for lspconfig_name, lsp_name in pairs(defaults.lspconfig_to_lsp_name) do

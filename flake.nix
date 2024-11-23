@@ -9,8 +9,12 @@
     pkgs = import nixpkgs { system = "x86_64-linux"; };
 
     deps = with pkgs; [
-      pkgs.fzf
+      pkgs.curl
+      pkgs.gh
+      pkgs.git
+
       pkgs.fd
+      pkgs.fzf
       pkgs.ripgrep
     ];
 
